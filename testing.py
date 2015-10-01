@@ -3,6 +3,7 @@
 
 from hypothesis import given, example
 import hypothesis.strategies as st
+import unittest
 
 
 def is_prime(number):
@@ -29,7 +30,7 @@ class PrimesTestCase(unittest.TestCase):
     @given(st.integers())
     def test_is_five_prime(self,s):
         """Is five successfully determined to be prime?"""
-        self.assertTrue(is_prime(s))
+        self.assertFalse(is_prime(s))
 
 if __name__ == '__main__':
     unittest.main()
